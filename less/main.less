@@ -1,0 +1,256 @@
+@import "lesshat.less";
+@import "fonts.less";
+
+@-webkit-keyframes glow {.glow-keyframes;}
+@-moz-keyframes glow 	{.glow-keyframes;}
+@-ms-keyframes glow 	{.glow-keyframes;}
+@-o-keyframes glow 		{.glow-keyframes;}
+@keyframes glow 		{.glow-keyframes;}
+
+.glow-keyframes(){
+	0%		{opacity:1;}
+	100%	{opacity:0;}
+}
+
+@-webkit-keyframes pulsate {.pulsate-keyframes;}
+@-moz-keyframes pulsate 	{.pulsate-keyframes;}
+@-ms-keyframes pulsate 	{.pulsate-keyframes;}
+@-o-keyframes pulsate 		{.pulsate-keyframes;}
+@keyframes pulsate 		{.pulsate-keyframes;}
+
+.pulsate-keyframes(){
+	0%		{box-shadow:0px 0px 0px @visual;}
+	50%		{box-shadow:0px 0px 20px @visual;}
+	100%	{box-shadow:0px 0px 0px @visual;}
+}
+
+@visual: #de2121;
+@600px:    ~"screen and (max-width: 600px)";
+@400px:    ~"screen and (max-width: 400px)";
+
+.visualfont{
+	font-family:'ColfaxWeb', Helvetica, Arial;
+	font-weight:300;
+
+	@media @400px{
+		font-weight:300;
+	}
+}
+
+html{
+	background:#F0F0F0;
+	background-size:cover;
+	background-position:center center;
+	background-repeat:no-repeat;
+	height:100%;
+	width:100%;
+	overflow-y:scroll;
+	background-attachment:fixed;
+}
+
+body{
+	padding:0px;
+	margin:0px;
+	margin-top:80px;
+	width:100%;
+
+	.transition(0.2s);
+
+	@media @600px{
+		.transition(0.2s);
+		margin-top:60px;
+	}
+
+	& .calltoaction{
+		.transition(0.2s);
+		margin:40px 0px;
+		font-size:24px;
+		padding:20px;
+		.visualfont;
+		border-radius:3px;
+		border:none;
+		background:@visual;
+		color:#FFF;
+		outline:none;
+		// line-height:40px;
+		height:80px;
+
+		.animation(pulsate 1.7s infinite);
+
+		cursor:pointer;
+		.box-sizing(border-box);
+
+		&.grey{
+			background:#333;
+		}
+
+		&:active{
+			// box-shadow:inset 0px 0px 10px rgba(0,0,0,0.7);
+			// line-height:42px;
+		}
+
+		@media @600px{
+			.transition(0.2s);
+			margin:20px 0px;
+			font-size:18px;
+			padding:10px 20px;
+			height:60px;
+		}
+	}
+
+	& .underscore{
+		.animation(glow 1.2s infinite);
+	}
+
+	& #nav{
+		position:absolute;
+		position:fixed;
+		top:0px;
+		left:0px;
+		right:0px;
+		height:80px;
+		background:#FFF;
+		color:#000;
+		line-height:80px;
+		border-bottom:1px solid #CDCDCD;
+		z-index:999998;
+		& .fader{
+			max-width:960px;
+			margin:0 auto;
+			position:relative;
+		}
+
+		.visualfont;
+
+		@media @600px{
+			height:60px;
+			line-height:60px;
+		}
+
+		& #logo{
+			float:left;
+			font-size:40px;
+			margin-left:20px;
+			letter-spacing:-2px;
+			font-weight:300;
+			text-shadow:0px 0px 40px rgba(0,0,0,0.2);
+
+			& .red{
+				color:@visual;
+			}
+
+			.transition(0.2s);
+
+			@media @600px{
+				.transition(0.2s);
+				font-size:28px;
+			}
+
+			@media @400px{
+			}
+		}
+
+		& #links{
+			margin:0;
+			float:right;
+			width:auto;
+			margin-right:20px;
+
+			& a li{
+				display:inline-block;
+
+				padding:0px 10px;
+
+				&:hover{
+					background:#F0F0F0;
+				}
+			}
+
+			font-size:16px;
+			.transition(0.2s);
+
+			@media @600px{
+				.transition(0.2s);
+				font-size:14px;
+			}
+		}
+
+		& a{
+			color:#000;
+		}
+	}
+
+	& #hero {
+		margin:0px;
+		padding:10px 20px;
+		
+		height:100%;
+		margin:0 auto;
+		width:100%;
+		max-width:960px;
+		.box-sizing(border-box);
+
+		& h1{
+			text-align:left;
+			.visualfont;
+			font-size:40px;
+			color:#000;
+			margin:40px 0px;
+			width:100%;
+			color:#444 !important;
+			// text-shadow:0px 0px 40px rgba(0,0,0,0.7);
+
+			.transition(0.2s);
+
+			@media @600px{
+				.transition(0.2s);
+				font-size:32px;
+				margin:20px 0px;
+			}
+		}
+
+		& p{
+			.visualfont;
+			text-align:left;
+			width:100%;
+			max-width:500px;
+			font-size:24px;
+			color:#444;
+			// text-shadow:0px 0px 40px rgba(0,0,0,0.7);
+			line-height:34px;
+
+			.transition(0.2s);
+
+			@media @600px{
+				.transition(0.2s);
+				font-size:18px;
+				line-height:26px;
+			}
+		}
+
+		& .ctacontainer{
+			text-align:left;
+			width:100%;
+		}
+	}
+
+	& .empty:after{
+		content:'.';
+		visiblity:hidden;
+		opacity:0;
+		font-size:0px;
+	}
+
+	& footer{
+		text-align:left;
+		.visualfont;
+		color:#444;
+		font-size:14px;
+		margin:0 auto;
+		padding:0px 20px;
+		padding-bottom:20px;
+		.box-sizing(border-box);
+		width:100%;
+		max-width:960px;
+	}
+}

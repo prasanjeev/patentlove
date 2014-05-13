@@ -1,0 +1,22 @@
+{
+  "name": "Patent-Love",
+  "version": "1.0.0",
+  "description": "Who doesn't love patents?",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-uglify": "~0.2.7",
+    "grunt-contrib-jshint": "~0.7.2",
+    "grunt-contrib-less": "~0.8.2",
+    "grunt-contrib-copy": "~0.4.1",
+    "grunt-s3": "~0.2.0-alpha.3",
+    "grunt-contrib-concat": "~0.3.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "preinstall": "npm install -g grunt-cli"
+  },
+  "author": ""
+}
